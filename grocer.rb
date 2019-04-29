@@ -43,7 +43,7 @@ end
 def apply_clearance(cart)
   cart.each do |item, details|
     if cart[item][:clearance] == true
-      cart[item][:price] = cart[item][price]* .8
+      cart[item][:price] = cart[item][price]* 0.8
     end
   end
   cart 
@@ -59,5 +59,11 @@ def checkout(cart, coupons)
     total_item_price = details[:price] * details[:count]
     total_item_price.to_f 
     subtotal += total_item_price
-    
+  end
+  
+  if subtotal > 100
+    subtotal = subtotal * 0.9
+  end
+  
+  subtotal
 end
