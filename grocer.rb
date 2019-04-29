@@ -17,9 +17,6 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  coupons.find |item|
-  if cart.include?(item)
-    if coupons[item][count] == cart[item][count]
       
 end
 
