@@ -1,5 +1,6 @@
 def consolidate_cart(cart)
   consol_cart = {}
+  
   cart.each do |thing|
     thing.each do |attribute, value|
       if consol_cart[thing] == false 
