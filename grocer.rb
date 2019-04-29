@@ -52,10 +52,10 @@ def checkout(cart, coupons)
   
   if cart.length == 1 
     cart = apply_coupons(cart,coupons)
-    sale_cart = apply_clearance(cart)
+    cart = apply_clearance(cart)
   else
     cart = apply_coupons(cart,coupons)
-    sale_cart= apply_clearance(cart)
+    cart= apply_clearance(cart)
   end
   
   subtotal = 0 
