@@ -50,9 +50,11 @@ end
 def checkout(cart, coupons)
   cart = consolidate_cart(cart)
   
-  cart = apply_coupons(cart)
-  
-  cart = apply_clearance(cart)
+  if cart.length == 1 
+    cart = apply_coupons(cart,coupons)
+    sale_cart = apply_clearance(cart)
+    if sale_cart.length > 1 
+      
   
   subtotal = 0 
   
