@@ -54,7 +54,9 @@ def checkout(cart, coupons)
     cart = apply_coupons(cart,coupons)
     sale_cart = apply_clearance(cart)
     if sale_cart.length > 1 
-      
+      sale_cart.each do |item, details|
+        if details[:count] >=1
+          
   
   subtotal = 0 
   
