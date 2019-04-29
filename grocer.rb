@@ -1,6 +1,16 @@
 def consolidate_cart(cart)
   consol_cart = {}
   
+  cart.each do |item|
+    item.each do |key, value|
+      if consol_cart.has_key?(key)
+        consol_cart[key][:count] += 1 
+      else
+        consol_cart[key] = value
+        consol_cart[key][:count] = 1 
+      end
+    end
+  end
   consol_cart
 end
 
