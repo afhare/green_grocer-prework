@@ -53,10 +53,10 @@ def checkout(cart, coupons)
   if cart.length == 1 
     cart = apply_coupons(cart,coupons)
     sale_cart = apply_clearance(cart)
-    if sale_cart.length > 1 
-      sale_cart.each do |item, details|
-        if details[:count] >=1
-          
+  else
+    cart = apply_coupons(cart,coupons)
+    sale_cart= apply_clearance(cart)
+  end
   
   subtotal = 0 
   
