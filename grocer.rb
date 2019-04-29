@@ -53,5 +53,11 @@ def checkout(cart, coupons)
   cart = apply_coupons(cart)
   cart = apply_clearance(cart)
   
+  subtotal = 0 
   
+  cart.each do |item,details|
+    total_item_price = details[:price] * details[:count]
+    total_item_price.to_f 
+    subtotal += total_item_price
+    
 end
